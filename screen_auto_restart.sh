@@ -163,8 +163,6 @@ start_or_restart_rl_swarm() {
     sleep 1
     screen -S "$SCREEN_NAME" -X stuff "source .venv/bin/activate$(printf '\r')"
     sleep 1
-    screen -S "$SCREEN_NAME" -X stuff "export CUDA_VISIBLE_DEVICES=""$(printf '\r')"
-    sleep 1
     screen -S "$SCREEN_NAME" -X stuff "./run_rl_swarm.sh$(printf '\r')"
     
     log_info "RL Swarm已在screen会话中启动"
